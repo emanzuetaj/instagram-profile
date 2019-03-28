@@ -1,5 +1,7 @@
-<router-outlet *ngIf="!loading"></router-outlet>
-<div *ngIf="loading" class="full-height" flex-column center-content>
+<div [ngClass]="{'hidden': loading, 'initial': !loading}" flex>
+    <router-outlet></router-outlet>
+</div>
+<div  [ngClass]="{'hidden': !loading}" class="full-height" flex-column center-content>
     <div flex-row center-content>
         <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
     </div>

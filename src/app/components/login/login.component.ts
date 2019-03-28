@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, AfterContentChecked } from '@angular/core';
+import { Component, AfterContentChecked } from '@angular/core';
 import { UserService } from 'src/app/services/user/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -14,9 +14,8 @@ export class LoginComponent implements AfterContentChecked {
     setTimeout(() => {
       this.activatedRoute.fragment.subscribe((fragment) => {
         if (fragment) {
-          this.userService.getProfile(fragment).subscribe(success => {
-            this.router.navigateByUrl('/profile');
-          });
+          this.userService.setToken(fragment);
+          this.router.navigateByUrl('/profile');
         }
       });
     });

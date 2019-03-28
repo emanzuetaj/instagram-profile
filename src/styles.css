@@ -2,7 +2,6 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
 [flex-row] {
     display: flex;
     flex-direction: row;
@@ -19,4 +18,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .text-center {
     text-align: center;
+}
+.hidden {
+    display: none;
+}
+.initial {
+    display: initial;
+}
+.snack-custom span {
+    width: 100%;
+    color: white;
 }
