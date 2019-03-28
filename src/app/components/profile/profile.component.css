@@ -1,0 +1,9 @@
+[mat-card-avatar] {
+    height: 10%;
+    width: 10%;
+}
+.card-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
