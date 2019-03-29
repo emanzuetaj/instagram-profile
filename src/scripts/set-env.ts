@@ -10,10 +10,12 @@ export const AppSettings = {
     authUrl: ${process.env.AUTH_URL}
 };
 `
+
 fs.writeFile(targetPath, envConfigFile, function (err) {
   if (err) {
     console.log(err);
   }
 
   console.log(`Output generated at ${targetPath}`);
+  console.log(envConfigFile);
 });
