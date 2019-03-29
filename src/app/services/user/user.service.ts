@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import * as AppSettings from '../../../appSettings.json';
+import { AppSettings } from '../../../appSettings';
 import { HttpClient } from '@angular/common/http';
 import { Observable, } from 'rxjs';
 import { tap, catchError, map, finalize } from 'rxjs/operators';
@@ -16,12 +16,12 @@ export class UserService {
   
   login() {
     const callbackUrl = window.location.origin + '/login';
-    const redirectUrl = `${AppSettings.API.authUrl}/authorize/?client_id=${AppSettings.API.clientId}&redirect_uri=${callbackUrl}&response_type=token`;
+    const redirectUrl = `${AppSettings.authUrl}/authorize/?client_id=${AppSettings.clientId}&redirect_uri=${callbackUrl}&response_type=token`;
     window.open(redirectUrl, '_self');
   }
   getProfile(token: string = this.accessTokenBit): Observable<any> {
     this.accessTokenBit = token;
-    const url = `${AppSettings.API.url}/users/self/?${token}`;
+    const url = `${AppSettings.url}/users/self/?${token}`;
     this.displayLoaderEvent$.emit(true);
     return this.http.get(url).pipe(catchError((error) => {
       throw error;
