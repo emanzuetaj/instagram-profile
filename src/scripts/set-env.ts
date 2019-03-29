@@ -1,4 +1,4 @@
-import { writeFile } from 'fs';
+var fs = require('fs');
 require('dotenv').config();
 
 const targetPath = `./src/appSettings.ts`;
@@ -10,7 +10,7 @@ export const AppSettings = {
     authUrl: ${process.env.AUTH_URL}
 };
 `
-writeFile(targetPath, envConfigFile, function (err) {
+fs.writeFile(targetPath, envConfigFile, function (err) {
   if (err) {
     console.log(err);
   }
