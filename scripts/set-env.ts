@@ -1,7 +1,7 @@
 var fs = require('fs');
 require('dotenv').config();
 
-const targetPath = `./src/appSettings.ts`;
+const targetPath = `src/appSettings.ts`;
 const envConfigFile = `
 export const AppSettings = {
     clientId: '${process.env.CLIENT_ID}',
