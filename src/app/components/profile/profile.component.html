@@ -6,12 +6,11 @@
       <div class="card-header">
         <mat-card-title>{{userProfile.full_name}}</mat-card-title>
         <mat-card-subtitle>{{userProfile.username}}</mat-card-subtitle>
+        <div id="user-bio" [innerHTML]="userProfile.bio"></div>
       </div>
     </mat-card-header>
     <mat-card-content>
-      <p>
-        {{userProfile.bio}}
-      </p>
+
     </mat-card-content>
   </mat-card>
 </div>

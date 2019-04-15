@@ -7,3 +7,6 @@
     flex-direction: column;
     justify-content: center;
 }
+#user-bio {
+    white-space: pre-line;
+}

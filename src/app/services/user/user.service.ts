@@ -23,7 +23,9 @@ export class UserService {
     this.accessTokenBit = token;
     const url = `${AppSettings.url}/users/self/?${token}`;
     this.displayLoaderEvent$.emit(true);
-    return this.http.get(url).pipe(catchError((error) => {
+    return this.http.get(url).pipe(tap(data => {
+     console.log(data);
+    }),catchError((error) => {
       throw error;
     }), finalize(() => {
       this.displayLoaderEvent$.emit(false);
