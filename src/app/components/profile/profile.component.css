@@ -10,3 +10,9 @@
 #user-bio {
     white-space: pre-line;
 }
+mat-card-content {
+    display: none;
+}
+.counts {
+    margin-right: 35px;
+}

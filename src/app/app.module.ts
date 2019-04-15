@@ -9,6 +9,7 @@ import { MaterialModule } from './material.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TokenInterceptor } from './services/token.interceptor';
+import { CountoModule }  from 'angular2-counto';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TokenInterceptor } from './services/token.interceptor';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    CountoModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },

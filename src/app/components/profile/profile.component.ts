@@ -10,6 +10,9 @@ import { MatSnackBar } from '@angular/material';
 })
 export class ProfileComponent implements AfterViewInit {
   userProfile: Profile;
+  followsCount: number = 0;
+  followersCount: number = 0;
+  postsCount: number = 0;
   constructor(private userService: UserService, private snackBar: MatSnackBar) { }
 
   ngAfterViewInit() {
