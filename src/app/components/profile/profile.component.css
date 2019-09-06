@@ -16,3 +16,6 @@ mat-card-content {
 .counts {
     margin-right: 35px;
 }
+.pad-top-10p {
+    padding-top: 10px;
+}

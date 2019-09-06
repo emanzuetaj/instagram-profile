@@ -7,20 +7,13 @@
         <mat-card-title>{{userProfile.full_name}}</mat-card-title>
         <mat-card-subtitle>{{userProfile.username}}</mat-card-subtitle>
         <div id="user-bio" [innerHTML]="userProfile.bio"></div>
-        <p>
-          <span class="counts" matBadge="{{followsCounts | number: '1.0-0'}}" matBadgeOverlap="false">Follows</span>
-          <span class="counts" matBadge="{{followersCount | number: '1.0-0'}}" matBadgeOverlap="false">Followers</span>
-          <span class="counts" matBadge="{{postsCount | number: '1.0-0'}}" matBadgeOverlap="false">Posts</span>
-        </p>
+        <div class="pad-top-10p">
+          <span>{{userProfile.counts.followed_by}}<sub>followers</sub></span>&nbsp;//&nbsp;<span>{{userProfile.counts.follows}}<sub>following</sub></span>
+        </div>
       </div>
     </mat-card-header>
-    <mat-card-content>
-      <div counto [step]="10" [countTo]="userProfile.counts.follows" [countFrom]="0" [duration]="1" (countoChange)="followsCounts = $event"></div>
-      <div counto [step]="10" [countTo]="userProfile.counts.followed_by" [countFrom]="0" [duration]="1" (countoChange)="followersCount = $event"></div>
-      <div counto [step]="10" [countTo]="userProfile.counts.media" [countFrom]="0" [duration]="1" (countoChange)="postsCount = $event"></div>
-    </mat-card-content>
   </mat-card>
-  <div class="media">
+  <div class="pad-top-10p">
     <mat-card *ngFor="let post of posts">
       <img [src]="post.images.standard_resolution.url" alt="">
     </mat-card>
