@@ -1,5 +1,8 @@
 <div [ngClass]="{'hidden': loading, 'initial': !loading}" flex>
     <router-outlet></router-outlet>
+    <div style="position: absolute; bottom: 10px">
+        <button routerLink="/privacy-policy" mat-raised-button>Privacy Policy</button>
+    </div>
 </div>
 <div  [ngClass]="{'hidden': !loading}" class="full-height" flex-column center-content>
     <div flex-row center-content>

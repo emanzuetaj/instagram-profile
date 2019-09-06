@@ -10,12 +10,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TokenInterceptor } from './services/token.interceptor';
 import { CountoModule }  from 'angular2-counto';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,
