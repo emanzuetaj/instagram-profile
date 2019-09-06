@@ -15,7 +15,11 @@
   </mat-card>
   <div class="pad-top-10p">
     <mat-card *ngFor="let post of posts">
-      <img [src]="post.images.standard_resolution.url" alt="">
+      <img [height]="post.images.standard_resolution.height" [width]="post.images.standard_resolution.width"  *ngIf="post.type === 'image'" [src]="post.images.standard_resolution.url" alt="">
+      <video *ngIf="post.type === 'video'" [width]="post.videos.standard_resolution.width" [height]="post.videos.standard_resolution.width" controls>
+        <source [src]="post.videos.standard_resolution.url" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </mat-card>
   </div>
 </div>
